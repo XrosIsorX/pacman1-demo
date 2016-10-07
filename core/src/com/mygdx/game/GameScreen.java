@@ -33,4 +33,8 @@ public class GameScreen extends ScreenAdapter{
         renderer.render(delta);
 	}
 	
+    private void update(float delta) {
+        world.update(delta);
+    }
+	
 }
