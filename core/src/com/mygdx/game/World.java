@@ -4,13 +4,17 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
 
 public class World {
-	public Pacman pacman;
+	private Pacman pacman;
+	PacmanGame pacmanGame;
+	private Maze maze;
 	
-	public World()
+	public World(PacmanGame pacmanGame)
 	{
+		this.pacmanGame = pacmanGame;
 		pacman = new Pacman(100,100);
+		maze = new Maze();
 	}
-	
+
 	void update(float delta)
 	{
 		
@@ -30,5 +34,15 @@ public class World {
 		{
 			pacman.move(Pacman.DIRECTION_RIGHT);
 		}
+	}
+	
+	Pacman getPacman()
+	{
+		return pacman;
+	}
+	
+	Maze getMaze()
+	{
+		return maze;
 	}
 }
