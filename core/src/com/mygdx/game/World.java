@@ -11,8 +11,8 @@ public class World {
 	public World(PacmanGame pacmanGame)
 	{
 		this.pacmanGame = pacmanGame;
-		pacman = new Pacman(60,60);
 		maze = new Maze();
+		pacman = new Pacman(60,60,maze);
 	}
 
 	void update(float delta)
@@ -55,4 +55,5 @@ public class World {
 	{
 		return maze;
 	}
+	
 }
