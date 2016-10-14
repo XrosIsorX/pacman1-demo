@@ -7,14 +7,26 @@ public class World {
 	private Pacman pacman;
 	PacmanGame pacmanGame;
 	private Maze maze;
+	private int score;
 	
 	public World(PacmanGame pacmanGame)
 	{
 		this.pacmanGame = pacmanGame;
 		maze = new Maze();
-		pacman = new Pacman(60,60,maze);
+		pacman = new Pacman(60,60,this);
+		score =0;
 	}
 
+	public void increateScore()
+	{
+		score++;
+	}
+	
+	public int getScore()
+	{
+		return score;
+	}
+	
 	void update(float delta)
 	{
 		updatePacmanDirection();
